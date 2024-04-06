@@ -8,21 +8,20 @@ body {
   
   /* Header */
   .header {
-    background-color: #2920cb; /* Dark background */
+    background-color: #281fcc; /* Dark background */
     color: white;
-    padding: 0.6rem;
+    padding: 1rem; /* Converted to rem */
     text-align: center;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
   }
   
   /* Logo positioning */
   .header img {
-    width: 120px;
+    width: 10rem; /* Converted to rem, consider max-width for responsiveness */
     height: auto;
-    float: left;
-    margin-right: 60px;
+    margin-left: 1rem; /* Converted to rem */
   }
   .content {
     padding: 5rem;
@@ -31,10 +30,12 @@ body {
   .sticky {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100%; /* Using % for fluid width */
+    z-index: 1000; /* Ensure it's on top of other content */
+    transition: top 0.3s; /* Smooth transition */
   }
-  sticky + .content {
-    padding-top: 182px;
+  .sticky + .content {
+    padding-top: 9rem; /* Adjusted to rem */
   }
   
   /* Navigation Links */
@@ -42,10 +43,13 @@ body {
     display: flex;
     justify-content: center;
     list-style-type: none;
+    margin:0; /*Reset default margin */
+    margin-right: 2rem; /* Adjust this value to shift the nav links to the left */
+    padding: 0; /*Reset default padding */
   }
   
   .nav-links li {
-    padding: 0 20px;
+    padding: 0 1rem; /* Converted to rem */
   }
   
   .nav-links a {
@@ -53,11 +57,16 @@ body {
     text-decoration: none;
     font-weight: bold;
   }
+
+  /* Content */
+  .content {
+    padding: 2rem; /* Adjusted padding for consistency */
+}
   
   /* Sections */
   section {
-    margin: 20px 0;
-    padding: 20px;
+    margin: 1rem 0; /* Converted to rem */
+    padding: 1rem; /* Converted to rem */
     background-color: white; /* Contrast against body */
   }
   
@@ -66,9 +75,36 @@ body {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 0.625rem; /* Converted to rem */
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 100%; /* Using % for fluid width */
   }
+
+/* Media Query Adjustments for smaller screens */
+
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      padding: 1rem; /* Already using rem */
+  }
+
+  .header img {
+      margin: 0 auto 1rem auto; /* Center logo and add margin below */
+  }
+
+  .nav-links {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+  }
+
+  .nav-links li {
+      padding: 0.625rem 0; /* Converted to rem */
+  }
+
+  .content {
+      padding: 1rem; /* Converted to rem */
+  }
+}
   
